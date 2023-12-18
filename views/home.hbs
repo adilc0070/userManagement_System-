@@ -1,0 +1,91 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <title>Home</title>
+  </head>
+  <body class="bg-dark">
+    <header>
+
+      <nav class="navbar navbar-expand-lg " style="background-color: #008080;">
+        <div class="container-fluid">
+          <a
+            class="navbar-brand text-dark ms-5 h1 fw-bold mb-0"
+            href="#"
+          >Dezcorb</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse ms-5" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item ">
+                <a class="nav-link active text-dark" aria-current="page" href="#">Flights</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-dark" href="#">Hotels</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-dark" href="#">Homestays</a>
+              </li>
+
+            </ul>
+          </div>
+          
+          <div class=" mt-2 pt-1 mb-3">
+            <button class="btn btn-dark btn-md btn-block" type="button">
+              <a
+                class="text-white"
+                style="text-decoration: none;"
+                href="/logout"
+              >Logout
+              </a></button>
+          </div>
+        </div>
+      </nav>
+
+    </header>
+    <section class="bg-dark">
+      <div class="container">
+        <div class="row mt-5 bg-dark gap-5 ">
+          {{#each items}}
+            <div class="card bg-dark" style="width: 18rem; border-color: rgba(0, 0, 0, 0.256);">
+              <img src={{this.image}} class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title bg-dark text-white">{{this.name}}</h5>
+                <p class="card-text bg-dark text-white" >{{this.desc}} </p>
+                <a href="#" class="btn btn-danger">Book Your Dream</a>
+              </div>
+            </div>
+          {{/each}}
+        </div>
+      </div>
+    </section>
+    <script type="text/javascript">
+      function preventBack() { window.history.forward(); }
+      setTimeout("preventBack()", 0); window.onunload = function () { null };
+    </script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    
+  </body>
+</html>
